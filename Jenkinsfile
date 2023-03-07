@@ -16,5 +16,12 @@ pipeline {
                     """  
                     }
         }
+        stage('postbuild') {
+            steps {
+                archiveArtifacts artifacts: '**/target/gameoflife.war',
+                            onlyIfSuccessful: true
+                junit testResults: '**/surefire-reports/TEST-*.xml'            
+            }
+        }
     }
 }
