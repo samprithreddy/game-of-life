@@ -1,8 +1,9 @@
 pipeline {
     agent {label 'jdk_8'}
       triggers { pollSCM ('H/2 * * * *') }
-       parameters {
+         parameters {
         string(name: 'MAVEN_GOAL', defaultValue: 'package', description: 'Maven Goal')
+    }
    
     stages {
         stage('vcs') {
