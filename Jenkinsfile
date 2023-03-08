@@ -1,6 +1,6 @@
 pipeline {
     agent {label 'jdk_8'}
-     triggers { cron ('H/15 * * * *') }
+     triggers { pollscm ('* * * * *') }
     stages {
         stage('vcs') {
             steps {
