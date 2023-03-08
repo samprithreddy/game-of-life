@@ -1,4 +1,4 @@
-Pipeline {
+pipeline {
     agent {label 'jdk_8'}
     stages {
         stage('vcs') {
